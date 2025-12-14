@@ -1,2 +1,4 @@
 # Google-save-extention
-This is google extention that can save input, save tab, and delete what we input
+Jika ada waktu saya ingin mengupgrade google extention saya agar lebih GG
+
+jika ada yang melihat post ini ajarkan bagaimana lebih pro
