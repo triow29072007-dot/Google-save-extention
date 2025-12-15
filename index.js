@@ -55,16 +55,22 @@ inputBtn.addEventListener("click", function () {
 })
 
 function renderLeads() {
-    let listItem = ""
-    for (let i = 0; i < myLead.length; i += 1) {
-        listItem += 
-        `<li>
-        <a target='_blank' href='${myLead[i]}'>
-        ${myLead[i]}
-        </a>
-        </li>`
-    }
+    ulEl.innerHTML = myLead.map((lead, index) => 
+    `<li>
+    <a target= "_blank" href="${lead}">${lead}
+    </a>
+    <button class= "delete-item" >❌</button>
+    </li>`
+   ).join("")
 
-    ulEl.innerHTML = listItem
 }
 
+ulEl.addEventListener("click", function (e) {
+    if (e.target.classList.contains("delete-item")) {
+        const index =e.target.parentElement.dataset.index
+
+        myLead.splice(index, 1)
+        localStorage.setItem("myLead", JSON.stringify(myLead))
+        renderLeads()
+    }
+})
