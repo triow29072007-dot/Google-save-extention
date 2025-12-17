@@ -56,7 +56,7 @@ inputBtn.addEventListener("click", function () {
 
 function renderLeads() {
     ulEl.innerHTML = myLead.map((lead, index) => 
-    `<li>
+    `<li data-index="${index}">
     <a target= "_blank" href="${lead}">${lead}
     </a>
     <button class= "delete-item" >❌</button>
